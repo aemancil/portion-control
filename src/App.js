@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 function App() {
@@ -9,8 +10,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to My React Website</h1>
-        <button onClick={handleClick}>Get Started</button>
+        <h1>Welcome to Portion Control</h1>
+        <Link to="/new-screen" className="get-started-button">
+          Get Started
+        </Link>
       </header>
     </div>
   );
