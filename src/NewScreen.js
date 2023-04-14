@@ -9,22 +9,27 @@ const NewScreen = () => {
   const [originalServingSize, setOriginalServingSize] = useState(1);
   const [desiredServingSize, setDesiredServingSize] = useState(1);
   const navigate = useNavigate();
+  const [originalIngredients, setOriginalIngredients] = useState([]);
+
 
   const handleEnter = () => {
     setIngredients([...ingredients, { name, quantity, measurement }]);
+    setOriginalIngredients([...originalIngredients, { name, quantity, measurement }]);
     setName('');
     setQuantity('');
     setMeasurement('');
   };
+  
 
   const handleSubmit = () => {
     const factor = desiredServingSize / originalServingSize;
-    const updatedIngredients = ingredients.map((ingredient) => ({
+    const updatedIngredients = originalIngredients.map((ingredient) => ({
       ...ingredient,
       quantity: ingredient.quantity * factor,
     }));
     setIngredients(updatedIngredients);
   };
+  
 
   const goHome = () => {
     navigate('/');
