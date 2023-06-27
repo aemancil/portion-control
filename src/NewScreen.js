@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './NewScreen.css';
 
 const NewScreen = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -19,7 +20,7 @@ const NewScreen = () => {
     setQuantity('');
     setMeasurement('');
   };
-  
+
 
   const handleSubmit = () => {
     const factor = desiredServingSize / originalServingSize;
@@ -29,42 +30,47 @@ const NewScreen = () => {
     }));
     setIngredients(updatedIngredients);
   };
-  
+
 
   const goHome = () => {
     navigate('/');
   };
 
   return (
-    <div>
-      <h1>This is the new screen</h1>
+    <div className="center-container">
+      <text className="text-header">
+        <h1>Please enter your values </h1>
+      </text>
       <form>
         <label>
-          Ingredient Name:
+          Ingredient Name: 
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            className="input-box"
           />
         </label>
         <label>
-          Quantity:
+          Quantity: 
           <input
             type="text"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
+            className="q-box"
           />
         </label>
         <label>
           Measurement:
-          <select value={measurement} onChange={(e) => setMeasurement(e.target.value)}>
+          <select value={measurement} onChange={(e) => setMeasurement(e.target.value)} className='select-box'>
             <option value="">Select</option>
             <option value="cups">Cups</option>
             <option value="tablespoons">Tablespoons</option>
             <option value="teaspoons">Teaspoons</option>
           </select>
+
         </label>
-        <button type="button" onClick={handleEnter}>
+        <button type="button" onClick={handleEnter} className='a-button'>
           Enter
         </button>
       </form>
@@ -81,6 +87,7 @@ const NewScreen = () => {
           type="number"
           value={originalServingSize}
           onChange={(e) => setOriginalServingSize(e.target.value)}
+          className="input-box"
         />
       </label>
       <label>
@@ -89,12 +96,13 @@ const NewScreen = () => {
           type="number"
           value={desiredServingSize}
           onChange={(e) => setDesiredServingSize(e.target.value)}
+          className="input-box"
         />
       </label>
-      <button type="button" onClick={handleSubmit}>
+      <button type="button" onClick={handleSubmit} className='a-button'>
         Submit
       </button>
-      <button type="button" onClick={goHome}>
+      <button type="button" onClick={goHome} className='a-button'>
         Go Home
       </button>
     </div>
