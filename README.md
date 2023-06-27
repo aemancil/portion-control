@@ -1,4 +1,9 @@
-# Portion Control App
+# Portion Control App (WIP)
+The portion control app allows users to add ingredients and adjust their quantities based on the desired serving size. It provides a user-friendly interface where users can enter ingredient details and specify the original and desired serving sizes. The app calculates the adjusted quantities of ingredients and displays the updated ingredient list, ensuring accurate measurements for different portion sizes. 
+
+![Screenshot 2023-06-27 055826](https://github.com/aemancil/portion-control/assets/84293121/d6fc03e0-4f90-4342-a700-12fd7aada53a)
+![Screenshot 2023-06-27 055803](https://github.com/aemancil/portion-control/assets/84293121/83e37350-c1d7-4c95-98b3-e4c8d11f0c43)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
